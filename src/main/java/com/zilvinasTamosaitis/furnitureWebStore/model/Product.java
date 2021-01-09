@@ -16,7 +16,7 @@ public class Product {
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "madeIn")
+    @Column(name = "made_in")
     private String madeIn;
 
     @Column(name = "price")

@@ -2,7 +2,6 @@ package com.zilvinasTamosaitis.furnitureWebStore.controller;
 
 
 import com.zilvinasTamosaitis.furnitureWebStore.model.Product;
-import com.zilvinasTamosaitis.furnitureWebStore.repository.ProductRepository;
 import com.zilvinasTamosaitis.furnitureWebStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +27,7 @@ public class ProductController {
     //    show product form
     @GetMapping("/showNewProductForm")
     public String showNewProductForm(Model model) {
-//        create model atribute to bind from data
+//        create model attribute to bind from data
         Product product = new Product();
         model.addAttribute("product", product);
         return "new_product";

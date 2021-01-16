@@ -17,24 +17,23 @@ public class ProductController {
 
     //  display list of products
     @RequestMapping("/")
-    public String viewHomePage(Model model) {
+    public String viewProductList(Model model) {
         model.addAttribute("listProducts", productService.GetAllProducts());
         return "index";
     }
 
 
     //    show product form
-    @GetMapping("/showNewProductForm")
+    @RequestMapping("/showNewProductForm")
     public String showNewProductForm(Model model) {
 
 //        create model atribute to bind from data
-
         Product product = new Product();
         model.addAttribute("product", product);
         return "new_product";
     }
 
-    @PostMapping("/saveProduct")
+    @RequestMapping("/saveProduct")
     public String saveProduct(@ModelAttribute("product") Product product) {
 //        save product to database
         productService.saveProduct(product);

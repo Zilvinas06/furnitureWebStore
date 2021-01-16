@@ -16,7 +16,11 @@ public class Product {
     @Column(name = "brand")
     private String brand;
 
+<<<<<<< HEAD
     @Column(name = "made_in")
+=======
+    @Column(name = "madeIn")
+>>>>>>> working "product list " + readme
     private String madeIn;
 
     @Column(name = "price")

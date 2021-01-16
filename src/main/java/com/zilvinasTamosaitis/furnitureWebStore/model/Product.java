@@ -1,65 +1,34 @@
 package com.zilvinasTamosaitis.furnitureWebStore.model;
 
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+@Getter
+@Setter
 @Entity
-@Table(name = "product")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "brand")
-    private String brand;
-
-<<<<<<< HEAD
-    @Column(name = "made_in")
-=======
-    @Column(name = "madeIn")
->>>>>>> working "product list " + readme
-    private String madeIn;
-
-    @Column(name = "price")
+    private String title;
+    private String category;
+    private int type;
+    private String make;
     private float price;
 
 
-    public void setId(Long id) {
+    @Column(columnDefinition = "text")
+    private String description;
+
+    public Product() {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getMadeIn() {
-        return madeIn;
-    }
-
-    public void setMadeIn(String madeIn) {
-        this.madeIn = madeIn;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
+        this.title = title;
+        this.category = category;
+        this.type = type;
+        this.make = make;
         this.price = price;
+        this.description = description;
     }
 }

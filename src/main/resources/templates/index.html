@@ -14,26 +14,28 @@
 <div class="container my-2">
     <h1>Product List</h1>
 
-    <a th:href="@{/showNewProductForm}" class="btn btn-primary btn-sm mb-3"> Add Product </a>
+    <a th:href="@{/showNewProductForm}" class="btn btn-primary btn-sm mb-3"> Add Product(prideti) </a>
 
     <table border="1" class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>Product Name</th>
-            <th>Product Brand</th>
-            <th>Product Made In</th>
+            <th>Product title</th>
+            <th>Product type</th>
+            <th>Product category</th>
             <th>Product Price</th>
+            <th>Product make</th>
             <th> Actions </th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="product : ${listProducts}">
-            <td th:text="${product.name}"></td>
-            <td th:text="${product.brand}"></td>
-            <td th:text="${product.madeIn}"></td>
-            <td th:text="${product.price}"></td>
-            <td> <a th:href="@{/showFormForUpdate/{id}(id=${product})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteProduct/{id}(id=${product})}" class="btn btn-danger">Delete</a>
+        <tr th:each="Product : ${listProducts}">
+            <td th:text="${Product.title}"></td>
+            <td th:text="${Product.category}"></td>
+            <td th:text="${Product.type}"></td>
+            <td th:text="${Product.make}"></td>
+            <td th:text="${Product.price}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${Product})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteProduct/{id}(id=${Product})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </tbody>

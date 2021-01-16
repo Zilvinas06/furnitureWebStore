@@ -14,11 +14,13 @@
     <h2>Save Product</h2>
 
     <form action="#" th:action="@{/saveProduct}" th:object="${product}" method="POST">
-        <input type="text" th:field="*{name}" placeholder="Product Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{title}" placeholder="Product title" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{brand}" placeholder="Product brand" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{category}" placeholder="Product category" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{madeIn}" placeholder="Product made in " class="form-control mb-4 col-4">
+        <input type="text" th:field="*{type}" placeholder="Product type " class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{make}" placeholder="Product make " class="form-control mb-4 col-4">
 
         <input type="text" th:field="*{price}" placeholder="Product price " class="form-control mb-4 col-4">
 

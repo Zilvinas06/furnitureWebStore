@@ -1,4 +1,4 @@
-package com.zilvinasTamosaitis.furnitureWebStore.Config;
+package com.zilvinasTamosaitis.furnitureWebStore.config;
 
 import com.zilvinasTamosaitis.furnitureWebStore.model.Product;
 import com.zilvinasTamosaitis.furnitureWebStore.repository.ProductRepository;

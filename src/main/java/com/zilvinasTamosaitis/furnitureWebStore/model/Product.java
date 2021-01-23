@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -26,6 +27,7 @@ public class Product {
     private float price;
     @Column(columnDefinition = "text")
     private String description;
+//    private List<Product> products;
 
     public Product(String title, String category, int type, String make, float price, String description) {
         this.title = title;
@@ -37,12 +39,6 @@ public class Product {
     }
 
     public Product() {
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.type = type;
-        this.make = make;
-        this.price = price;
-        this.description = description;
+        System.out.println("product object created");
     }
 }

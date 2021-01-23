@@ -4,12 +4,13 @@ package com.zilvinasTamosaitis.furnitureWebStore.controller;
 import com.zilvinasTamosaitis.furnitureWebStore.model.Product;
 import com.zilvinasTamosaitis.furnitureWebStore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/products")
+@RequestMapping(path = "/index")
 public class ProductController {
 
 
@@ -20,11 +21,16 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping
-    public List<Product> getProducts(){
-        return List.of(new Product("man","kede",1,"efsdf", 2F, "aptrauktas pelvele"));
+    @GetMapping(path = "product/get")
+    public List<Product> getProducts() {
+        return productService.getProducts();
+
+
     }
 
+
+//     model.addAttribute("books", bookService.findAll());
+//    return "books/allBooks";
 
 
     @PostMapping("/product/add")

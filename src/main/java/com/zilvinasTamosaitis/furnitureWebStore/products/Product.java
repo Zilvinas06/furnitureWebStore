@@ -1,10 +1,10 @@
-package com.zilvinasTamosaitis.furnitureWebStore.model;
+package com.zilvinasTamosaitis.furnitureWebStore.products;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -25,8 +25,8 @@ public class Product {
     private int type;
     private String make;
     private float price;
-    @Column(columnDefinition = "text")
-    private String description;
+    @Column(name = "picByte", length = 1000)
+    private byte[] picByte;
 //    private List<Product> products;
 
     public Product(String title, String category, int type, String make, float price, String description) {
@@ -35,10 +35,10 @@ public class Product {
         this.type = type;
         this.make = make;
         this.price = price;
-        this.description = description;
+        this.picByte = picByte;
     }
 
     public Product() {
-        System.out.println("product object created");
+
     }
 }
